@@ -1,0 +1,26 @@
+---
+- name: Uninstall software
+  apt: name="{{ item }}" purge=yes force=yes state=absent
+  with_items:
+    - thunderbird
+    - rhythmbox
+    - libreoffice-draw
+    - libreoffice-impress
+    - libreoffice-math
+    - unity-lens-photos
+    - empathy
+    - gnome-mahjongg
+    - gnomine
+    - gnome-sudoku
+    - aisleriot
+    - totem-common
+    - unity-webapps-common
+    - ibus-pinyin
+    - bittorrent
+    - evolution-data-server-online-accounts
+    - landscape-client-ui-install
+  
+- name: Remove ~/setup folder
+  file:
+    path: "/home/{{ username }}/setup"
+    state: absent

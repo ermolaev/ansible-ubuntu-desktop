@@ -1,0 +1,36 @@
+---
+- name: Ensure bash, OpenSSl, and libssl are the latest versions
+  apt: name={{ item }} update_cache=true state=latest
+  with_items:
+    - bash
+    - openssl
+    - libssl-dev
+    - libssl-doc
+    - python-psycopg2
+  tags: packages
+
+- name: postgresql - add repository key
+  apt_key: url=https://www.postgresql.org/media/keys/ACCC4CF8.asc state=present
+
+- name: postgresql - add official postgresql repository
+  apt_repository: repo="deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg  main" state=present
+
+- name: Install PostgreSQL
+  apt: name={{ item }} update_cache=true state=installed
+  with_items:
+    - postgresql-9.5
+    - postgresql-contrib-9.5
+    - libpq-dev
+    - postgresql-9.5-plr
+    - postgresql-server-dev-9.5
+    - postgresql-9.5-postgis-2.2
+  tags: packages
+
+- name: Install postgresq configuration file.
+  copy: src=files/postgresql.conf dest=/etc/postgresql/9.5/main/postgresql.conf
+  notify: restart postgresql
+
+- name: Create postgres user
+  postgresql_user: name={{ pg_user }} password={{ pg_password }}
+  become: true
+  become_user: postgres

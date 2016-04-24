@@ -1,0 +1,15 @@
+---
+- name: install redis
+  apt:
+    name: redis-server
+    update_cache: yes
+
+# - name: Download Redis Desktop Manager
+#   get_url:
+#     url: "{{ redis_desktop_manager }}"
+#     dest: "/home/{{ username }}/setup/redis_desktop_manager.deb"
+#
+# - name: install Redis Desktop Manager
+#   command: "gdebi redis_desktop_manager.deb"
+#   args:
+#     chdir: "/home/{{ username }}/setup"

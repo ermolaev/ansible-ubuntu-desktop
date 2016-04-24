@@ -1,0 +1,8 @@
+---
+- name: Download chef from official script
+  get_url:
+    url: https://www.opscode.com/chef/install.sh
+    dest: "/home/{{ username }}/setup/installchef.sh"
+
+- name: Run chef installer
+  command: "bash /home/{{ username }}/setup/installchef.sh"

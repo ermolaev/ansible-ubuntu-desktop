@@ -1,0 +1,51 @@
+---
+# Reguirements
+#  - include: pre.yml
+#  - include: git.yml
+#  - include: java.yml
+#  - include: gdebi.yml
+
+# Dev soft
+# - include: oh-my-zsh.yml
+#  - include: spf13-vim.yml
+#  - include: atom.yml
+#  - include: rubymine.yml
+#  - include: gitkraken.yml
+#  - include: sublime.yml
+#  - include: teamviewer.yml
+#  - include: rstudio.yml
+
+# Browsers
+#   - include: chrome.yml
+#   - include: opera.yml
+#
+# System
+#   - include: numix.yml
+#   - include: fonts.yml
+
+# Utilities
+#  - include: utilities.yml
+#  - include: skype.yml
+#  - include: mysql-workbench.yml
+#  - include: clementine.yml
+#  - include: corebird.yml
+#  - include: keepassx.yml
+#  - include: wine.yml
+#  - include: yandex_disk.yml
+
+
+# Server soft
+#  - include: ruby.yml
+#  - include: postgresql.yml
+#  - include: redis.yml
+#  - include: r.yml
+  - include: sbt.yml
+
+# DevOps
+#  - include: chef.yml
+#  - include: virtualbox.yml
+#  - include: vagrant.yml
+#  - include: docker.yml
+
+# Remove unused software
+#  - include: uninstall.yml

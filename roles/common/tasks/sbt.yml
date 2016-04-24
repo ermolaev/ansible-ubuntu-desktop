@@ -1,0 +1,14 @@
+---
+- name: Download sbt
+  get_url:
+    url: "{{ sbt_url }}"
+    dest: "/home/{{ username }}/setup/sbt.deb"
+
+- name: install sbt
+  command: gdebi sbt.deb -n
+  args:
+    chdir: "/home/{{ username }}/setup"
+
+
+- name: install maven
+  apt: name=maven

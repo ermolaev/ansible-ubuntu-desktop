@@ -1,0 +1,34 @@
+---
+- name: Install several utilities and monitoring software
+  apt: pkg={{ item }} state=latest install_recommends=no
+  with_items:
+    - deja-dup
+    - unity-tweak-tool
+    - indicator-multiload
+    - psensor
+    - gparted
+    - vlc
+    - filezilla
+    - p7zip-full
+    - radiotray
+#    - terminator
+    - tmux
+    - guake
+    - linssid
+#    - smartmontools
+#    - lxc
+#    - gv
+#    - texlive-lang-cjk
+
+- name: Creates directory
+  file: path=/home/{{ username }}/.local/share/radiotray state=directory recurse=yes
+
+- name: Set date sormat
+  shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"
+
+- name: Install radiotray configuration file.
+  copy:
+    src: files/radiotray.xml
+    dest: /home/{{ username }}/.local/share/radiotray/bookmarks.xml
+    owner: '{{ username }}'
+  notify: restart radiotray

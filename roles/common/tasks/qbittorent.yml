@@ -1,0 +1,6 @@
+---
+- name: Add qbittorrent in system repositories
+  apt_repository: repo="ppa:qbittorrent-team/qbittorrent-stable" state=present
+
+- name: Install qbittorrent
+  apt: name=qbittorrent force=yes

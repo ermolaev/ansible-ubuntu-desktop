@@ -1,0 +1,10 @@
+---
+- name: Download Rstudio
+  get_url:
+    url: "{{ rstudio_url }}"
+    dest: "/home/{{ username }}/setup/rstudio.deb"
+
+- name: install Rstudio
+  command: gdebi rstudio.deb -n
+  args:
+    chdir: "/home/{{ username }}/setup"

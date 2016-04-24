@@ -1,0 +1,23 @@
+---
+- name: download rubymine
+  get_url:
+    url: "https://download.jetbrains.com/ruby/{{ rubymine_name }}.tar.gz"
+    dest: "/home/{{ username }}/setup/rubymine.tar.gz"
+
+- name: extract rubymine
+  unarchive:
+    src: "/home/{{ username }}/setup/rubymine.tar.gz"
+    dest: "/home/{{ username }}/setup"
+
+- name: Creates directory
+  file: path=/opt/rubymine state=directory
+
+- name: MOVE TO /opt/rubymine
+  shell: mv /home/{{ username }}/setup/{{ rubymine_name }}/* /opt/rubymine
+
+- lineinfile: dest=/opt/rubymine/bin/rubymine64.vmoptions line="-Dhidpi=true"
+
+- name: Run rubymine
+  command: "./rubymine.sh"
+  args:
+    chdir: "/opt/rubymine/bin"

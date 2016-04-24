@@ -1,0 +1,36 @@
+---
+- name: download vagrant .deb package
+  get_url:
+    url: "{{ vagrant_url }}"
+    dest: "/home/{{ username }}/ansible-ubuntu-desktop/vagrant.deb"
+    validate_certs: no
+    mode: 0755
+
+- name: install vagrant
+  apt:
+    deb: "/home/{{ username }}/ansible-ubuntu-desktop/vagrant.deb"
+  
+- name: Change ownership for ~/.vagrant.d folder
+  file:
+    path: "/home{{ username }}/.vagrant.d"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    state: directory
+    recurse: yes
+
+- name: install vagrant plugins
+  command: "vagrant plugin install {{ item }}"
+  with_items:
+   - vagrant-cachier
+#   - vagrant-gatling-rsync
+#   - vagrant-share
+   - vagrant-hostsupdater
+   - vagrant-hostmanager
+#   - vagrant-triggers
+   - vagrant-vbguest
+#   - vagrant-bindfs
+#   - vagrant-lxc
+
+- name: Install nfs (nfs-kernel-server)
+  apt:
+    name: nfs-kernel-server

@@ -1,0 +1,16 @@
+---
+- name: enable MultiArch if installing on Ubuntu 64x
+  shell: "dpkg --add-architecture i386"
+
+- name: Add Wine in system repositories
+  apt_repository: repo="ppa:wine/wine-builds" state=present
+
+- name: Install Wine
+  apt: name=winehq-devel install_recommends=yes force=yes
+
+- name: Winecfg
+  command: winecfg
+  become: yes
+  become_user: "{{ username }}"
+  args:
+    chdir: /home/{{ username }}

@@ -1,0 +1,14 @@
+---
+- name: Download TeamViewer
+  get_url:
+    url: "http://download.teamviewer.com/download/teamviewer_i386.deb"
+    dest: "/home/{{ username }}/setup/teamviewer.deb"
+
+- name: install TeamViewer
+  command: gdebi teamviewer.deb -n
+  args:
+    chdir: "/home/{{ username }}/setup"
+
+# http://askubuntu.com/questions/419605/teamviewer-9-ubuntu-13-10-sound
+- name: Run teamviewer winecfg
+  command: teamviewer --winecfg

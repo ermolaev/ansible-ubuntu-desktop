@@ -1,0 +1,6 @@
+---
+- name: Add Corebird in system repositories
+  apt_repository: repo="ppa:ubuntuhandbook1/corebird" state=present
+
+- name: Install Corebird
+  apt: name=corebird force=yes

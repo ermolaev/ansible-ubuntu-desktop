@@ -1,0 +1,6 @@
+---
+- name: Add keepassx in system repositories
+  apt_repository: repo="ppa:eugenesan/ppa" state=present
+
+- name: Install keepassx
+  apt: name=keepassx force=yes

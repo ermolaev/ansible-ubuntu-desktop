@@ -1,0 +1,3 @@
+---
+- name: install gdebi
+  apt: name=gdebi update_cache=yes

@@ -1,0 +1,18 @@
+---
+- name: Install zsh shell
+  apt: name=zsh
+
+- name: Clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{ username }}/.oh-my-zsh
+
+- name: remove standard zshrc
+  file: path=/home/{{ username }}/.zshrc state=absent
+
+- name: Set zsh as default shell
+  user: name={{ username }} shell=/bin/zsh
+
+- name: Install zsh configuration file.
+  copy:
+    src: files/zshrc.conf
+    dest: /home/{{ username }}/.zshrc
+    owner: '{{ username }}'

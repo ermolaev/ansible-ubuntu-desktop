@@ -1,0 +1,25 @@
+---
+# https://github.com/chrissimpkins/codeface
+- name: download fonts
+  get_url:
+    url: "https://github.com/chrissimpkins/codeface/releases/download/font-collection/codeface-fonts.zip"
+    dest: "/home/{{ username }}/setup/codeface-fonts.zip"
+
+- name: extract fonts
+  unarchive:
+    src: "/home/{{ username }}/setup/codeface-fonts.zip"
+    dest: "/home/{{ username }}/setup"
+    owner: '{{ username }}'
+
+- name: MOVE TO .fonts
+  shell: "cp -r /home/{{ username }}/setup/fonts/* /home/{{ username }}/.fonts"
+
+- name: install source-code-pro - set system font
+  gconftool-2:
+    key: /apps/gnome-terminal/profiles/Default/font
+    string: "Source Code Pro Semi-Bold 12"
+
+- name: install source-code-pro - dont use default system font in terminal
+  gconftool-2:
+    key: /apps/gnome-terminal/profiles/Default/use_system_font
+    bool: false

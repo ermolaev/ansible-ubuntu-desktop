@@ -1,0 +1,18 @@
+---
+- name: install Skype dependencies
+  apt:
+    name: "sni-qt:i386"
+    update_cache: yes
+
+- name: enable MultiArch if installing on Ubuntu 64x
+  shell: "dpkg --add-architecture i386"
+
+- name: Download Skype
+  get_url:
+    url: "{{ skype_url }}"
+    dest: "/home/{{ username }}/setup/skype.deb"
+
+- name: install Skype
+  command: gdebi skype.deb -n
+  args:
+    chdir: "/home/{{ username }}/setup"
