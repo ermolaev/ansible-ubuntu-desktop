@@ -14,7 +14,7 @@ wget -qO- https://raw.githubusercontent.com/ermolaev/ansible-ubuntu-desktop/mast
 
 `WINEPREFIX="$HOME/.navicat64" winecfg`
 
-Fix problem for programm written on electron for 4k displays
+Fix problem for programs written on electron for 4k displays
 -------------------------------
 https://github.com/atom/atom/issues/10518
 
