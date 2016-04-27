@@ -13,3 +13,14 @@ wget -qO- https://raw.githubusercontent.com/ermolaev/ansible-ubuntu-desktop/mast
 
 
 `WINEPREFIX="$HOME/.navicat64" winecfg`
+
+Fix problem for programm written on electron for 4k displays
+-------------------------------
+https://github.com/atom/atom/issues/10518
+
+`Exec=/opt/atom/atom --ignore-gpu-blacklist --disable-gpu-sandbox %F`
+
+```
+sudo vim /usr/share/applications/atom.desktop
+sudo vim /usr/share/applications/gitkraken.desktop
+```
