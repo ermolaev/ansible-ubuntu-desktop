@@ -40,6 +40,7 @@
 #  - include: redis.yml
 #  - include: r.yml
   - include: sbt.yml
+  - include: memcached.yml
 
 # DevOps
 #  - include: chef.yml
