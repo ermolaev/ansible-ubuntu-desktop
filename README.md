@@ -11,6 +11,7 @@ wget -qO- https://raw.githubusercontent.com/ermolaev/ansible-ubuntu-desktop/mast
 -------------------------------
 `rsync -avzr ermolaev@192.168.0.103:/home/ermolaev/folder /home/ermolaev/folder`
 
+`export QT_DEVICE_PIXEL_RATIO=1.5` # vim ~/.profile
 
 `WINEPREFIX="$HOME/.navicat64" winecfg`
 
