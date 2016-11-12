@@ -3,7 +3,6 @@
   apt: name="{{ item }}" purge=yes force=yes state=absent
   with_items:
     - thunderbird
-    - rhythmbox
     - libreoffice-draw
     - libreoffice-impress
     - libreoffice-math
@@ -19,7 +18,7 @@
     - bittorrent
     - evolution-data-server-online-accounts
     - landscape-client-ui-install
-  
+
 - name: Remove ~/setup folder
   file:
     path: "/home/{{ username }}/setup"

@@ -18,17 +18,16 @@
 - name: Install PostgreSQL
   apt: name={{ item }} update_cache=true state=installed
   with_items:
-    - postgresql-9.5
-    - postgresql-contrib-9.5
+    - postgresql-{{pg_version}}
+    - postgresql-contrib-{{pg_version}}
     - libpq-dev
-    - postgresql-9.5-plr
-    - postgresql-server-dev-9.5
-    - postgresql-9.5-postgis-2.2
+    - postgresql-{{pg_version}}-plr
+    - postgresql-server-dev-{{pg_version}}
+    - postgresql-{{pg_version}}-postgis-{{postgis_version}}
   tags: packages
 
 - name: Install postgresq configuration file.
-  copy: src=files/postgresql.conf dest=/etc/postgresql/9.5/main/postgresql.conf
-  notify: restart postgresql
+  copy: src=files/postgresql.conf dest=/etc/postgresql/{{pg_version}}/main/postgresql.conf
 
 - name: Create postgres user
   postgresql_user: name={{ pg_user }} password={{ pg_password }}

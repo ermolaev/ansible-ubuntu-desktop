@@ -2,6 +2,8 @@
 	<group name="root">
 		<bookmark name="Мегаполис" url="http://stream04.media.rambler.ru/megapolis128.mp3?3"/>
 		<bookmark name="Pilot Radio Tver" url="http://online.tv-pilot.ru:1027/pilotradio"/>
+		<bookmark name="Music Alex-M" url="http://stream02.media.rambler.ru/musicm"/>
+    <bookmark name="Energy" url="http://stream01.media.rambler.ru/energy128.mp3"/>
 		<group name="Dance">
 			<bookmark name="Radio Record" url="http://air.radiorecord.ru:8101/rr_320"/>
 			<bookmark name="Pirate Station" url="http://air.radiorecord.ru:8102/ps_128"/>

@@ -1,9 +1,0 @@
---
-- name: Purge openjdk*
-  command: apt-get purge openjdk*
-
-- name: Add java in system repositories
-  apt_repository: repo="ppa:webupd8team/java" state=present
-
-- name: Install java
-  apt: name=oracle-java8-installer force=yes

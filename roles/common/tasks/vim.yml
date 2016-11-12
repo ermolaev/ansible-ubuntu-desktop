@@ -1,0 +1,12 @@
+---
+- name: Install vim editor
+  apt: name=vim
+
+- name: Install Vim configuration file.
+  copy:
+    src: files/vimrc
+    dest: /home/{{ username }}/.vimrc
+    owner: '{{ username }}'
+
+- name: vim - run bundle install
+  command: "vim +PluginInstall +BundleClean +qall"

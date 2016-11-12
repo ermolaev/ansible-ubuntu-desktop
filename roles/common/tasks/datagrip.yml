@@ -1,0 +1,26 @@
+---
+- name: download datagrip
+  get_url:
+    url: "https://download.jetbrains.com/datagrip/datagrip-{{ datagrip_ver }}.tar.gz"
+    dest: "/home/{{ username }}/setup/datagrip.tar.gz"
+
+- name: extract datagrip
+  unarchive:
+    src: /home/{{ username }}/setup/datagrip.tar.gz
+    dest: /home/{{ username }}/setup
+    owner: "{{ username }}"
+
+- name: Creates directory
+  file: path=/opt/datagrip state=directory owner={{ username }}
+
+- name: MOVE TO /opt/datagrip
+  shell: mv /home/{{ username }}/setup/DataGrip-{{ datagrip_ver }}/* /opt/datagrip
+
+- lineinfile: dest=/opt/datagrip/bin/datagrip64.vmoptions line="-javaagent:/home/{{ username }}/soft/LinuxJavaFixes-1.0.0-SNAPSHOT.jar"
+
+- name: Run datagrip
+  command: "./datagrip.sh"
+  args:
+    chdir: "/opt/datagrip/bin"
+  become: yes
+  become_user: "{{ username }}"

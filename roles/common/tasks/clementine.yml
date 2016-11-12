@@ -1,6 +1,0 @@
----
-- name: Add Clementine in system repositories
-  apt_repository: repo="ppa:me-davidsansome/clementine" state=present
-
-- name: Install Clementine
-  apt: name=clementine force=yes

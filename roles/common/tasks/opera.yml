@@ -1,17 +1,11 @@
 ---
-- name: Add Opera browser on repositories
-  apt_repository:
-    repo: "deb http://deb.opera.com/opera/ stable non-free"
-  
-- name: get Opera key
-  get_url: 
-    url: http://deb.opera.com/archive.key
-    dest: /home/{{ username }}/setup
+- name: Add opera repo
+  apt_repository: repo="deb http://deb.opera.com/opera/ stable non-free" state=present
 
-- name: Install Opera key
-  command: "apt-key add /home/{{ username }}/setup/archive.key"
+- name: Add the opera APT key
+  apt_key: url=http://deb.opera.com/archive.key
 
-- name: Install Opera browser
-  apt:
-    name: opera
-    update_cache: yes
+- name: Install opera
+  apt: name={{item}} state=latest
+  with_items:
+  - opera-stable

@@ -25,3 +25,18 @@ https://github.com/atom/atom/issues/10518
 sudo vim /usr/share/applications/atom.desktop
 sudo vim /usr/share/applications/gitkraken.desktop
 ```
+
+
+# TODO Navicat
+
+http://askubuntu.com/questions/748626/create-launcher-icon-for-navicat
+
+sudo apt-get install lib32ncurses5 lib32z1
+
+# TODO rubymine theme configuration
+
+# TODO spotify
+https://www.spotify.com/us/download/linux/
+https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/m-p/1216088/highlight/true#M141051
+
+# TODO atom configuration

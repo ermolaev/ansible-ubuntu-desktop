@@ -1,3 +1,0 @@
----
-- name: install mysql-workbench
-  apt: name=mysql-workbench

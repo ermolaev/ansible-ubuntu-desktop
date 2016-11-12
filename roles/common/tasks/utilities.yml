@@ -7,21 +7,31 @@
     - indicator-multiload
     - psensor
     - gparted
-    - vlc
+    - mpv
     - filezilla
     - p7zip-full
     - radiotray
+    - htop
+    - powertop
+    - xclip
 #    - terminator
-    - tmux
-    - guake
     - linssid
 #    - smartmontools
 #    - lxc
 #    - gv
 #    - texlive-lang-cjk
+    - phantomjs
+    - memcached
+    - pgdbf
+    - httpie
+
 
 - name: Creates directory
-  file: path=/home/{{ username }}/.local/share/radiotray state=directory recurse=yes
+  file:
+    path: /home/{{ username }}/.local/share/radiotray
+    state: directory
+    recurse: yes
+    owner: {{ username }}
 
 - name: Set date sormat
   shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"
@@ -30,5 +40,4 @@
   copy:
     src: files/radiotray.xml
     dest: /home/{{ username }}/.local/share/radiotray/bookmarks.xml
-    owner: '{{ username }}'
-  notify: restart radiotray
+    owner: {{ username }}
