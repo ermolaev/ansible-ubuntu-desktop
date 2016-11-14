@@ -40,3 +40,14 @@ https://www.spotify.com/us/download/linux/
 https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/m-p/1216088/highlight/true#M141051
 
 # TODO atom configuration
+
+# kworker cpu problem (after BIOS update)
+`grep enabled /sys/firmware/acpi/interrupts/gpe*`
+
+`sudo micro /etc/rc.local`
+```bash
+#!/bin/sh -e
+echo "disable" > /sys/firmware/acpi/interrupts/gpe61
+exit 0
+```
+`sudo chmod 755 /etc/rc.local`
