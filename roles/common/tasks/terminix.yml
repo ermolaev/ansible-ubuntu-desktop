@@ -1,6 +1,0 @@
----
-- name: install sublime text - add sublime text ppa
-  apt_repository: repo='ppa:webupd8team/terminix' state=present update_cache=yes
-
-- name: install sublime text
-  apt: name=terminix update_cache=yes

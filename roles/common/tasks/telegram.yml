@@ -1,0 +1,11 @@
+---
+- name: Install telegram ppa
+  become: true
+  apt_repository:
+    repo: 'ppa:atareao/telegram'
+
+- name: Install telegram
+  become: true
+  apt: name={{item}} update_cache=yes state=installed
+  with_items:
+       - telegram

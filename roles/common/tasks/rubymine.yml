@@ -1,7 +1,7 @@
 ---
 - name: download rubymine
   get_url:
-    url: "https://download.jetbrains.com/ruby/{{ rubymine_name }}.tar.gz"
+    url: "{{ rubymine_url }}"
     dest: "/home/{{ username }}/setup/rubymine.tar.gz"
 
 - name: extract rubymine
@@ -10,11 +10,15 @@
     dest: /home/{{ username }}/setup
     owner: "{{ username }}"
 
+- name: Delete directory
+  file: path=/opt/rubymine state=absent
+
 - name: Creates directory
-  file: path=/opt/rubymine state=directory owner={{ username }}
+  file: path=/opt/rubymine state=directory
 
 - name: MOVE TO /opt/rubymine
-  shell: mv /home/{{ username }}/setup/{{ rubymine_name }}/* /opt/rubymine
+  shell: mv /home/{{ username }}/setup/{{ rubymine_folder_name }}/* /opt/rubymine
+  become: yes
 
 - lineinfile: dest=/opt/rubymine/bin/rubymine64.vmoptions line="-javaagent:/home/{{ username }}/soft/LinuxJavaFixes-1.0.0-SNAPSHOT.jar"
 

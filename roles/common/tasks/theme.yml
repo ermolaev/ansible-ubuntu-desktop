@@ -1,0 +1,8 @@
+---
+- name: Add Moka Repo
+  apt_repository: repo="ppa:moka/daily" state=present
+
+- name: Install Moka Icons
+  apt:
+    name: moka-icon-theme
+    update_cache: yes

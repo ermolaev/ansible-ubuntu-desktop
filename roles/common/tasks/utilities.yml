@@ -31,13 +31,15 @@
     path: /home/{{ username }}/.local/share/radiotray
     state: directory
     recurse: yes
-    owner: {{ username }}
+    owner: "{{ username }}"
 
 - name: Set date sormat
   shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"
+  become: yes
+  become_user: "{{ username }}"
 
 - name: Install radiotray configuration file.
   copy:
     src: files/radiotray.xml
     dest: /home/{{ username }}/.local/share/radiotray/bookmarks.xml
-    owner: {{ username }}
+    owner: "{{ username }}"

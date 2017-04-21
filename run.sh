@@ -1,5 +1,5 @@
 # Install required software
-sudo apt-get install python-setuptools aptitude git curl python-dev libxml2-dev libxslt-dev
+sudo apt-get install python-setuptools aptitude git curl python-dev libxml2-dev libxslt-dev build-essential libssl-dev libffi-dev
 
 # Install Python pip
 sudo easy_install pip
@@ -17,6 +17,6 @@ cd ~/ansible-ubuntu-desktop
 sudo pip install -r requirements.txt
 
 # Run Ansible...
-ansible-playbook setup.yml -i HOSTS --ask-sudo-pass  --module-path ./ansible_modules
+sudo ansible-playbook setup.yml -i HOSTS --ask-sudo-pass  --module-path ./ansible_modules
 
 exit 0

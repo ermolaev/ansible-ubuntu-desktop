@@ -10,29 +10,34 @@
   - include: vim.yml
   - include: atom.yml
   - include: rubymine.yml
+  - include: datagrip.yml
   - include: gitkraken.yml
   - include: sublime.yml
   - include: teamviewer.yml
   - include: rstudio.yml
-  - include: terminix.yml
+  - include: tilix.yml
   - include: micro.yml
 
 # Browsers
-   - include: chrome.yml
-   - include: opera.yml
+  - include: chrome.yml
+  - include: opera.yml
 #
 # System
-   - include: numix.yml
-   - include: fonts.yml
+  - include: numix.yml
+  - include: fonts.yml
+  - include: theme.yml
 
 # Utilities
   - include: utilities.yml
   - include: skype.yml
+  - include: telegram.yml
   - include: corebird.yml
   - include: keepassx.yml
   - include: wine.yml
   - include: yandex_disk.yml
-
+  - include: screenshoter.yml
+  - include: spotify.yml
+  - include: qbittorent.yml
 
 # Server soft
   - include: ruby.yml

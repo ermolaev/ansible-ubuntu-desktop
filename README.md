@@ -1,11 +1,24 @@
-Provisioning Ubuntu Desktop 16.04
+Provisioning Ubuntu Desktop 17.04
 =========================
+
+https://github.com/IFenrirI/ansible-client-setup
 
 How To Install With One Command
 -------------------------------
 ```bash
-wget -qO- https://raw.githubusercontent.com/ermolaev/ansible-ubuntu-desktop/master/run.sh | sudo bash
+wget -qO- https://raw.githubusercontent.com/ermolaev/ansible-ubuntu-desktop/master/run.sh | bash
 ```
+
+Начать выполнение с определенной задачи - `--start-at-task`
+
+```bash
+ansible-playbook setup.yml -i HOSTS --ask-sudo-pass --module-path ./ansible_modules --start-at-task="Run teamviewer winecfg"
+```
+
+Изменяем владельца
+```bash
+sudo chown $USER:$USER directory -R
+``````
 
 Копируем каталог с удаленной машины
 -------------------------------
@@ -24,6 +37,7 @@ https://github.com/atom/atom/issues/10518
 ```
 sudo vim /usr/share/applications/atom.desktop
 sudo vim /usr/share/applications/gitkraken.desktop
+sudo vims ~/.local/share/applications/jetbrains-rubymine.desktop
 ```
 
 
@@ -35,9 +49,13 @@ sudo apt-get install lib32ncurses5 lib32z1
 
 # TODO rubymine theme configuration
 
-# TODO spotify
+# spotify
 https://www.spotify.com/us/download/linux/
+
 https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/m-p/1216088/highlight/true#M141051
+
+`sudo vim /usr/share/applications/spotify.desktop`
+`Exec=spotify %U --force-device-scale-factor=2`
 
 # TODO atom configuration
 

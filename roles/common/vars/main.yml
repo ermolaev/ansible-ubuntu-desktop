@@ -1,24 +1,25 @@
 ---
 username: ermolaev
 
-# Rubygems vesrion
-rubygems_vesrion: v2.4.6
-
 # Skype URL
-skype_url: https://go.skype.com/skypeforlinux-64-alpha.deb
+skype_url: https://repo.skype.com/latest/skypeforlinux-64.deb
 
 # https://www.jetbrains.com/ruby/download/download-thanks.html?platform=linux
-rubymine_name: RubyMine-2016.2.4
-datagrip_ver: 2016.2.5
+rubymine_url: https://download.jetbrains.com/ruby/RubyMine-2017.1.1.tar.gz
+rubymine_folder_name: RubyMine-2017.1.1
+
+# https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=linux
+datagrip_url: https://download.jetbrains.com/datagrip/datagrip-2017.1.1.tar.gz
+datagrip_folder_name: DataGrip-2017.1.1
 
 # https://www.vagrantup.com/downloads.html
-vagrant_url: https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
+vagrant_url: https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb
 
 # https://www.virtualbox.org/wiki/Linux_Downloads
-virtualbox_url: http://download.virtualbox.org/virtualbox/5.1.6/virtualbox-5.1_5.1.6-110634~Ubuntu~xenial_amd64.deb
+virtualbox_url: http://download.virtualbox.org/virtualbox/5.1.20/virtualbox-5.1_5.1.20-114628~Ubuntu~zesty_amd64.deb
 
 # https://www.rstudio.com/products/rstudio/download/
-rstudio_url: https://download1.rstudio.org/rstudio-0.99.903-amd64.deb
+rstudio_url: https://download1.rstudio.org/rstudio-1.0.143-amd64.deb
 
 # http://redisdesktop.com/download
 redis_desktop_manager: https://github.com/uglide/RedisDesktopManager/releases/download/0.8.3/redis-desktop-manager_0.8.3-120_amd64.deb
@@ -28,5 +29,5 @@ pg_password: postgres
 
 sbt_url: https://dl.bintray.com/sbt/debian/sbt-0.13.12.deb
 
-pg_version: 9.5
-postgis_version: 2.2
+pg_version: 9.6
+postgis_version: 2.3
