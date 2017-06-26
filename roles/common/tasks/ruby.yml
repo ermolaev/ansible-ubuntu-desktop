@@ -31,3 +31,9 @@
   shell: "bash -lc 'bundle config --global --jobs 3'"
   become: yes
   become_user: "{{ username }}"
+
+- name: Set Pry config
+  copy:
+    src: files/pryrc
+    dest: /home/{{ username }}/.pryrc
+    owner: '{{ username }}'
