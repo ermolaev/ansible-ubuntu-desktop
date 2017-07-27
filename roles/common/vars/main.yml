@@ -31,3 +31,5 @@ sbt_url: https://dl.bintray.com/sbt/debian/sbt-0.13.12.deb
 
 pg_version: 9.6
 postgis_version: 2.3
+
+docker_apt_repository: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"
