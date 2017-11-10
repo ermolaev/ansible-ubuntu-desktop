@@ -21,7 +21,7 @@
 # Browsers
   - include: chrome.yml
   - include: opera.yml
-#
+
 # System
   - include: numix.yml
   - include: fonts.yml
@@ -31,11 +31,9 @@
   - include: utilities.yml
   - include: skype.yml
   - include: telegram.yml
-  - include: corebird.yml
   - include: keepassx.yml
   - include: wine.yml
   - include: yandex_disk.yml
-  - include: screenshoter.yml
   - include: spotify.yml
   - include: qbittorent.yml
 

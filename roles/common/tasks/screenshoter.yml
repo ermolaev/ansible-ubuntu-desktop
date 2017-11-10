@@ -1,5 +1,0 @@
-# https://help.mail.ru/cloud_web/screenshoter/linux
-
----
-- name: Install Mail.ru screenshoter
-  apt: deb=http://r.mail.ru/n235912501

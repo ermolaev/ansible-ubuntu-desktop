@@ -1,11 +1,21 @@
 ---
-- name: Install telegram ppa
+- name: create Telegram dir
   become: true
-  apt_repository:
-    repo: 'ppa:atareao/telegram'
+  become_method: sudo
+  file:
+    path: /opt/telegram
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
 
-- name: Install telegram
+- name: extract archive to Telegram dir
   become: true
-  apt: name={{item}} update_cache=yes state=installed
-  with_items:
-       - telegram
+  become_method: sudo
+  unarchive:
+    src: https://telegram.org/dl/desktop/linux
+    dest: /opt/telegram
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    remote_src: true
+    validate_certs: false

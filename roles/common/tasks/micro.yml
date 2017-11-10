@@ -1,3 +1,3 @@
 ---
 - name: Install micro console redactor (like vim)
-  shell: 'curl -sL https://gist.githubusercontent.com/zyedidia/d4acfcc6acf2d0d75e79004fa5feaf24/raw/25924d76d8cd54e55dccec877c1b383cdf0e3dce/install_micro.sh | sudo bash -s linux64 /usr/local/bin'
+  shell: 'snap install micro --classic'

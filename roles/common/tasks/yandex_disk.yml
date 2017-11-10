@@ -1,7 +1,15 @@
 ---
 # https://yandex.com/support/disk/cli-clients.xml#cli-install
-- name: Install Yandex Disk CLI
-  shell: 'echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk'
+- name: Add Yandex Disk GPG
+  apt_key:
+    url: "http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG"
+    state: present
+
+- name: Add repository Yandex Disk
+  apt_repository: repo='deb http://repo.yandex.ru/yandex-disk/deb/ stable main'
+
+- name: Install Yandex Disk
+  apt: name=yandex-disk update_cache=yes state=latest
 
 # https://github.com/slytomcat/yandex-disk-indicator
 - name: Yandex Disk Indicator - add ppa
