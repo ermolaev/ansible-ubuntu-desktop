@@ -1,30 +1,29 @@
 ---
 - name: Install several utilities and monitoring software
-  apt: pkg={{ item }} state=latest install_recommends=no
-  with_items:
-    - deja-dup
-    - unity-tweak-tool
-    - indicator-multiload
-    - psensor
-    - gparted
-    - mpv
-    - filezilla
-    - p7zip-full
-    - radiotray
-    - htop
-    - powertop
-    - xclip
-#    - terminator
-    - linssid
-#    - smartmontools
-#    - lxc
-#    - gv
-#    - texlive-lang-cjk
-    - phantomjs
-    - memcached
-    - pgdbf
-    - httpie
-
+  apt:
+    name:
+      - deja-dup
+      - unity-tweak-tool
+      - indicator-multiload
+      - psensor
+      - gparted
+      - mpv
+      - filezilla
+      - p7zip-full
+      - radiotray
+      - htop
+      - iotop
+      - powertop
+      - xclip
+      # - terminator
+      - linssid
+      # - smartmontools
+      # - lxc
+      # - gv
+      # - texlive-lang-cjk
+      - memcached
+      - pgdbf
+      - httpie
 
 - name: Creates directory
   file:
@@ -33,13 +32,13 @@
     recurse: yes
     owner: "{{ username }}"
 
-- name: Set date sormat
-  shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"
-  become: yes
-  become_user: "{{ username }}"
-
 - name: Install radiotray configuration file.
   copy:
     src: files/radiotray.xml
     dest: /home/{{ username }}/.local/share/radiotray/bookmarks.xml
     owner: "{{ username }}"
+
+- name: Set date sormat
+  shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"
+  become: yes
+  become_user: "{{ username }}"

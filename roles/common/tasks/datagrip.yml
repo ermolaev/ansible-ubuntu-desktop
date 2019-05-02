@@ -13,8 +13,13 @@
 - name: Delete directory
   file: path=/opt/datagrip state=absent
 
-- name: Creates directory
-  file: path=/opt/datagrip state=directory
+- name: create directory
+  file:
+    path: /opt/datagrip
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
 
 - name: MOVE TO /opt/datagrip
   shell: mv /home/{{ username }}/setup/{{ datagrip_folder_name }}/* /opt/datagrip

@@ -1,0 +1,10 @@
+- name: Key
+  apt_key: id=68576280 url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
+
+- name: Repo
+  apt_repository: repo='deb [arch=amd64] https://deb.nodesource.com/node_10.x {{ansible_distribution_release}} main' state=present filename="nodejs-10"
+- name: Repo src
+  apt_repository: repo='deb-src [arch=amd64] https://deb.nodesource.com/node_10.x {{ansible_distribution_release}} main' state=present filename="nodejs-10"
+
+- name: Install
+  apt: name=nodejs update_cache=yes state=latest

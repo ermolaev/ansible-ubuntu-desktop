@@ -1,12 +1,12 @@
 ---
 - name: Ensure bash, OpenSSl, and libssl are the latest versions
-  apt: name={{ item }} update_cache=true state=latest
-  with_items:
-    - bash
-    - openssl
-    - libssl-dev
-    - libssl-doc
-    - python-psycopg2
+  apt:
+    name:
+      - bash
+      - openssl
+      - libssl-dev
+      - libssl-doc
+      - python-psycopg2
   tags: packages
 
 - name: postgresql - add repository key
@@ -16,14 +16,13 @@
   apt_repository: repo="deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg  main" state=present
 
 - name: Install PostgreSQL
-  apt: name={{ item }} update_cache=true state=installed
-  with_items:
-    - postgresql-{{pg_version}}
-    - postgresql-contrib-{{pg_version}}
-    - libpq-dev
-    - postgresql-{{pg_version}}-plr
-    - postgresql-server-dev-{{pg_version}}
-    - postgresql-{{pg_version}}-postgis-{{postgis_version}}
+  apt:
+    name:
+      - postgresql-{{pg_version}}
+      - postgresql-contrib-{{pg_version}}
+      - libpq-dev
+      - postgresql-server-dev-{{pg_version}}
+      - postgresql-{{pg_version}}-postgis-{{postgis_version}}
   tags: packages
 
 - name: Install postgresq configuration file.

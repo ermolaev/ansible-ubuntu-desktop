@@ -5,29 +5,26 @@ username: ermolaev
 skype_url: https://repo.skype.com/latest/skypeforlinux-64.deb
 
 # https://www.jetbrains.com/ruby/download/download-thanks.html?platform=linux
-rubymine_url: https://download.jetbrains.com/ruby/RubyMine-2017.2.4.tar.gz
-rubymine_folder_name: RubyMine-2017.2.4
+rubymine_url: https://download.jetbrains.com/ruby/RubyMine-2019.1.1.tar.gz
+rubymine_folder_name: RubyMine-2019.1.1
 
 # https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=linux
-datagrip_url: https://download.jetbrains.com/datagrip/datagrip-2017.2.2.tar.gz
-datagrip_folder_name: DataGrip-2017.2.2
+datagrip_url: https://download.jetbrains.com/datagrip/datagrip-2019.1.2.tar.gz
+datagrip_folder_name: DataGrip-2019.1.2
 
 # https://www.vagrantup.com/downloads.html
-vagrant_url: https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
+vagrant_url: https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
 
 # https://www.virtualbox.org/wiki/Linux_Downloads
-virtualbox_url: http://download.virtualbox.org/virtualbox/5.2.0/virtualbox-5.2_5.2.0-118431~Ubuntu~zesty_amd64.deb
+virtualbox_url: https://download.virtualbox.org/virtualbox/6.0.6/virtualbox-6.0_6.0.6-130049~Ubuntu~bionic_amd64.deb
 
 # https://www.rstudio.com/products/rstudio/download/
-rstudio_url: https://download1.rstudio.org/rstudio-xenial-1.1.383-amd64.deb
-
-# http://redisdesktop.com/download
-redis_desktop_manager: https://github.com/uglide/RedisDesktopManager/releases/download/0.8.3/redis-desktop-manager_0.8.3-120_amd64.deb
+rstudio_url: https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.1335-amd64.deb
 
 pg_user: postgres
 pg_password: postgres
 
-pg_version: 9.6
-postgis_version: 2.3
+pg_version: 11
+postgis_version: 2.5
 
 docker_apt_repository: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"

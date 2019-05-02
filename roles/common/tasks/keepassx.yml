@@ -1,3 +1,4 @@
 ---
-- name: Install keepassx
-  apt: name=keepassx force=yes
+- name: Install KeePassXC
+  snap:
+    name: keepassxc

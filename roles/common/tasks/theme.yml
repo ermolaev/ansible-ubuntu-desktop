@@ -1,8 +1,9 @@
 ---
 - name: Add Moka Repo
-  apt_repository: repo="ppa:moka/daily" state=present
+  apt_repository: repo="ppa:snwh/ppa" state=present
 
 - name: Install Moka Icons
   apt:
-    name: moka-icon-theme
-    update_cache: yes
+    name:
+      - moka-icon-theme
+      - faba-icon-theme

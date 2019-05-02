@@ -13,8 +13,13 @@
 - name: Delete directory
   file: path=/opt/rubymine state=absent
 
-- name: Creates directory
-  file: path=/opt/rubymine state=directory
+- name: create directory
+  file:
+    path: /opt/rubymine
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
 
 - name: MOVE TO /opt/rubymine
   shell: mv /home/{{ username }}/setup/{{ rubymine_folder_name }}/* /opt/rubymine

@@ -2,13 +2,11 @@
 # Reguirements
   - include: pre.yml
   - include: git.yml
-  - include: java.yml
   - include: gdebi.yml
 
 # Dev soft
   - include: oh-my-zsh.yml
   - include: vim.yml
-  - include: atom.yml
   - include: rubymine.yml
   - include: datagrip.yml
   - include: gitkraken.yml
@@ -29,16 +27,19 @@
 
 # Utilities
   - include: utilities.yml
+  - include: redshift.yml
   - include: skype.yml
   - include: telegram.yml
   - include: keepassx.yml
-  - include: wine.yml
+  # - include: wine.yml
   - include: yandex_disk.yml
-  - include: spotify.yml
+  # - include: spotify.yml
   - include: qbittorent.yml
 
 # Server soft
   - include: ruby.yml
+  - include: node.yml
+  - include: yarn.yml
   - include: postgresql.yml
   - include: redis.yml
   - include: r.yml
@@ -53,3 +54,5 @@
 
 # Remove unused software
   - include: uninstall.yml
+  - include: unity.yml
+  - include: tlp.yml

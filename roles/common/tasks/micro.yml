@@ -1,3 +1,5 @@
 ---
 - name: Install micro console redactor (like vim)
-  shell: 'snap install micro --classic'
+  snap:
+    name: micro
+    classic: yes

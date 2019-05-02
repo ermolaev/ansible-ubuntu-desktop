@@ -1,0 +1,11 @@
+# Install ansible-galaxy roles using this file
+#
+# Run
+# sudo ansible-galaxy install -r requirements.yml
+#
+# Ref: https://docs.ansible.com/ansible/galaxy.html#installing-multiple-roles-from-a-file
+
+---
+- src: gantsign.visual-studio-code
+- src: zzet.rbenv
+- src: robertdebock.java

@@ -1,0 +1,13 @@
+---
+- name: Add Repo TLP
+  apt_repository: repo="ppa:linrunner/tlp"
+
+- name: Install TLP
+  apt:
+    name: tlp
+
+- name: TLP config
+  replace:
+    path: /etc/default/tlp
+    regexp: SOUND_POWER_SAVE_ON_AC=1
+    replace: SOUND_POWER_SAVE_ON_AC=0

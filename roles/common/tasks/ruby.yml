@@ -1,25 +1,4 @@
 ---
-- name: remove ruby
-  apt:
-    name: ruby
-    state: absent
-  tags: rub
-
-- name: Import GPG keys for rvm
-  shell: 'gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
-  changed_when: False
-  become: yes
-  become_user: "{{ username }}"
-  args:
-    chdir: /home/{{ username }}
-
-- name: install rvm with ruby
-  shell: "curl -sSL https://get.rvm.io | bash -s stable --ruby --auto-dotfiles --with-gems=\"bundler\""
-  become: yes
-  become_user: "{{ username }}"
-  args:
-    chdir: /home/{{ username }}
-
 - name: Disable rdoc
   lineinfile:
     dest: "/home/{{ username }}/.gemrc"
@@ -37,8 +16,3 @@
     src: files/pryrc
     dest: /home/{{ username }}/.pryrc
     owner: '{{ username }}'
-
-- name: Install system-libraries for gems
-  apt: pkg={{ item }} state=latest install_recommends=no
-  with_items:
-    - libxml2-dev

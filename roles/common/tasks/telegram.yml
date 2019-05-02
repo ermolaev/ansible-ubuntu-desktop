@@ -1,7 +1,5 @@
 ---
 - name: create Telegram dir
-  become: true
-  become_method: sudo
   file:
     path: /opt/telegram
     state: directory
@@ -10,8 +8,6 @@
     group: "{{ username }}"
 
 - name: extract archive to Telegram dir
-  become: true
-  become_method: sudo
   unarchive:
     src: https://telegram.org/dl/desktop/linux
     dest: /opt/telegram
