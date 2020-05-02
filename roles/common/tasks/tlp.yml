@@ -6,8 +6,11 @@
   apt:
     name: tlp
 
+- name: Run TLP
+  command: tlp start
+
 - name: TLP config
   replace:
-    path: /etc/default/tlp
+    path: /etc/tlp.conf
     regexp: SOUND_POWER_SAVE_ON_AC=1
     replace: SOUND_POWER_SAVE_ON_AC=0

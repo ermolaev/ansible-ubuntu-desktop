@@ -6,4 +6,4 @@
      - gtk-redshift
 
 - name: Configurate redshift
-  command: gtk-redshift -l 35.90:56.84 -t 6500:4000 & exit
+  command: gtk-redshift -l 35.90:56.84 -t 6500:4000 &

@@ -10,7 +10,6 @@
       - mpv
       - filezilla
       - p7zip-full
-      - radiotray
       - htop
       - iotop
       - powertop
@@ -24,19 +23,7 @@
       - memcached
       - pgdbf
       - httpie
-
-- name: Creates directory
-  file:
-    path: /home/{{ username }}/.local/share/radiotray
-    state: directory
-    recurse: yes
-    owner: "{{ username }}"
-
-- name: Install radiotray configuration file.
-  copy:
-    src: files/radiotray.xml
-    dest: /home/{{ username }}/.local/share/radiotray/bookmarks.xml
-    owner: "{{ username }}"
+      - bat # https://github.com/sharkdp/bat
 
 - name: Set date sormat
   shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"

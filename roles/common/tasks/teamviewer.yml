@@ -7,4 +7,4 @@
   command: teamviewer --winecfg
   become: yes
   become_user: "{{ username }}"
-  become_method: su 
+  become_method: su

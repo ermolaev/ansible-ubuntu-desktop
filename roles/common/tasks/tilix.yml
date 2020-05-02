@@ -1,6 +1,3 @@
 ---
-- name: install tilix - add ppa
-  apt_repository: repo='ppa:webupd8team/terminix' state=present update_cache=yes
-
-- name: install tilix
+- name: Install Tilix
   apt: name=tilix update_cache=yes

@@ -1,9 +1,4 @@
 ---
-- name: install numix theme - add numix ppa
-  apt_repository:
-    repo: "ppa:numix/ppa"
-    state: present
-
 - name: install numix theme - install gtk theme
   apt:
     name: numix-gtk-theme

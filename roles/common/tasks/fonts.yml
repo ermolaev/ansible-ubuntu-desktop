@@ -18,6 +18,4 @@
   shell: "cp -r /home/{{ username }}/setup/fonts/* /home/{{ username }}/.fonts"
 
 - name: install source-code-pro - set system font
-  gconftool2:
-    key: "/apps/gnome-terminal/profiles/Default/font"
-    string: "Source Code Pro Semi-Bold 12"
+  shell: gconftool-2 --set --type=string '/apps/gnome-terminal/profiles/Default/font' 'Source Code Pro Semi-Bold 12'

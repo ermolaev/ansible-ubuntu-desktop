@@ -1,14 +1,4 @@
 ---
-- name: Ensure bash, OpenSSl, and libssl are the latest versions
-  apt:
-    name:
-      - bash
-      - openssl
-      - libssl-dev
-      - libssl-doc
-      - python-psycopg2
-  tags: packages
-
 - name: postgresql - add repository key
   apt_key: url=https://www.postgresql.org/media/keys/ACCC4CF8.asc state=present
 
@@ -18,17 +8,31 @@
 - name: Install PostgreSQL
   apt:
     name:
-      - postgresql-{{pg_version}}
-      - postgresql-contrib-{{pg_version}}
+      - postgresql-{{ pg_version }}
+      - postgresql-contrib-{{ pg_version }}
       - libpq-dev
-      - postgresql-server-dev-{{pg_version}}
-      - postgresql-{{pg_version}}-postgis-{{postgis_version}}
+      - postgresql-server-dev-{{ pg_version }}
+      - postgresql-{{ pg_version }}-postgis-{{ postgis_version }}
   tags: packages
 
-- name: Install postgresq configuration file.
-  copy: src=files/postgresql.conf dest=/etc/postgresql/{{pg_version}}/main/postgresql.conf
+- name: Install pg configuration file
+  template:
+    src: files/postgresql.conf
+    dest: /etc/postgresql/{{ pg_version }}/main/postgresql.conf
+
+- name: Install psycopg2
+  become: yes
+  pip:
+    name: psycopg2-binary
+    executable: pip3
 
 - name: Create postgres user
   postgresql_user: name={{ pg_user }} password={{ pg_password }}
   become: true
   become_user: postgres
+
+- name: Enable postgresql and start
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes

@@ -9,7 +9,7 @@
 - name: install vagrant
   apt:
     deb: "/home/{{ username }}/ansible-ubuntu-desktop/vagrant.deb"
-  
+
 - name: Change ownership for ~/.vagrant.d folder
   file:
     path: "/home{{ username }}/.vagrant.d"

@@ -10,22 +10,36 @@
     dest: /home/{{ username }}/setup
     owner: "{{ username }}"
 
-- name: Delete directory
+- name: Delete directory DataGrip
   file: path=/opt/datagrip state=absent
 
-- name: create directory
+- name: create directory DataGrip
   file:
     path: /opt/datagrip
     state: directory
+
+- name: MOVE TO /opt/datagrip
+  shell: cp -r /home/{{ username }}/setup/DataGrip*/* /opt/datagrip
+  become: yes
+
+- name: DataGrip folder change ownership
+  file:
+    path: /opt/datagrip
+    state: directory
+    recurse: yes
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"
 
-- name: MOVE TO /opt/datagrip
-  shell: mv /home/{{ username }}/setup/{{ datagrip_folder_name }}/* /opt/datagrip
-  become: yes
+- name: RubyMine fix hotkeys in cyrillic keyboard
+  lineinfile:
+   dest: /opt/datagrip/bin/datagrip64.vmoptions
+   line: -javaagent:/home/{{ username }}/soft/LinuxJavaFixes/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
 
-- lineinfile: dest=/opt/datagrip/bin/datagrip64.vmoptions line="-javaagent:/home/{{ username }}/soft/LinuxJavaFixes-1.0.0-SNAPSHOT.jar"
+- name: RubyMine using agent
+  lineinfile:
+   dest: /opt/datagrip/bin/datagrip64.vmoptions
+   line: -javaagent:/home/{{ username }}/soft/jetbrains-agent/jetbrains-agent.jar
 
 - name: Run datagrip
   command: "./datagrip.sh"

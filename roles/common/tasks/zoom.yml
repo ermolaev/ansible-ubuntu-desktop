@@ -1,0 +1,9 @@
+---
+- name: Install Zoom
+  apt: deb=https://zoom.us/client/latest/zoom_amd64.deb
+
+- name: Set scale Factor for Zoom
+  replace:
+    path: "/home/{{ username }}/.config/zoomus.conf"
+    regexp: ^scaleFactor=1$
+    replace: scaleFactor=1.5

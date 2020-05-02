@@ -1,6 +1,6 @@
 ---
-- name: install R
-  apt: name={{ item }} update_cache=true state=latest
+- name: Install R
+  apt: name={{ item }} update_cache=true
   with_items:
     - r-base
     - r-base-dev

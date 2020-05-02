@@ -1,14 +1,3 @@
 ---
-- name: Install dkms package
-  apt:
-    name: dkms
-  
-- name: Download virtualbox .deb package
-  get_url:
-    url: "{{ virtualbox_url }}"
-    dest: "/home/{{ username }}/ansible-ubuntu-desktop/virtualbox.deb"
-    mode: 0755
-
-- name: Install virtualbox
-  apt:
-    deb: "/home/{{ username }}/ansible-ubuntu-desktop/virtualbox.deb"
+- name: install Virtualbox
+  apt: deb={{ virtualbox_url }}

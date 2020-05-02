@@ -1,0 +1,16 @@
+---
+- name: Install Radiotray-NG
+  apt: deb={{ radioray_url }}
+
+- name: Creates directory
+  file:
+    path: /home/{{ username }}/.config/radiotray-ng
+    state: directory
+    recurse: yes
+    owner: "{{ username }}"
+
+- name: Install radiotray configuration file.
+  copy:
+    src: files/radiotray/
+    dest: /home/{{ username }}/.config/radiotray-ng
+    owner: "{{ username }}"

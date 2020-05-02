@@ -1,18 +1,26 @@
-- hosts: web
+- name: a playbook to setup my local machine with my basic customizations
+  hosts: local
+  connection: local
+  vars_files:
+    - roles/common/vars/main.yml
+  roles:
+    - common
+
+- hosts: local
   gather_facts: true # https://github.com/zzet/ansible-rbenv-role/issues/37
   vars:
     rbenv:
       env: user
       version: v1.1.2
-      default_ruby: 2.5.5
+      default_ruby: 2.5.8
       rubies:
-      - version: 2.5.5
+      - version: 2.5.8
         env:
           RUBY_CONFIGURE_OPTS: "--disable-install-rdoc --disable-install-doc --enable-shared"
   roles:
     - role: zzet.rbenv
       rbenv_users:
-        - user
+        - puffer
 
 - hosts: local
   roles:
@@ -20,11 +28,9 @@
     - role: robertdebock.java
       java_version: 11
 
-- name: a playbook to setup my local machine with my basic customizations
-  hosts: local
-  connection: local
-  vars:
-    contents: "{{ lookup('file', 'roles/common/vars/main.yml') }}"
-  roles:
-    - common
 
+---
+# Playbook to install bat
+- host: all
+  roles:
+    - aeimer.install_bat

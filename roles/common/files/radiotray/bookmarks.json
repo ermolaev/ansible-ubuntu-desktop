@@ -1,0 +1,216 @@
+[
+	{
+		"group" : "Jazz",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Smooth Jazz",
+				"url" : "http://smoothjazz.com/streams/smoothjazz_128.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Sonic Universe",
+				"url" : "http://somafm.com/sonicuniverse.pls"
+			}
+		]
+	},
+	{
+		"group" : "Latin",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Top Latino Radio",
+				"url" : "http://online.radiodifusion.net:8020/listen.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Reggaeton 24/7",
+				"url" : "http://cc.net2streams.com/tunein.php/reggaeton/playlist.pls"
+			}
+		]
+	},
+	{
+		"group" : "Classic Rock",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "181.FM Classic Hits",
+				"url" : "http://www.181.fm/winamp.pls?station=181-greatoldies&file=181-greatoldies.pls"
+			},
+			{
+				"image" : null,
+				"name" : ".977 Classic Rock",
+				"url" : "http://www.977music.com/tunein/web/classicrock.asx"
+			},
+			{
+				"image" : null,
+				"name" : "Covers",
+				"url" : "http://somafm.com/covers.pls"
+			}
+		]
+	},
+	{
+		"group" : "Chill",
+		"image" : null,
+		"stations" : 
+		[
+			{
+				"image" : null,
+				"name" : "Lounge Radio",
+				"url" : "http://www.lounge-radio.com/listen128.m3u"
+			},
+			{
+				"image" : null,
+				"name" : "Beat Blender",
+				"url" : "http://somafm.com/beatblender.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Secret Agent",
+				"url" : "http://somafm.com/secretagent.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Groove Salad",
+				"url" : "http://somafm.com/groovesalad.pls"
+			},
+			{
+				"image" : null,
+				"name" : "Illinois Street Lounge",
+				"url" : "http://somafm.com/illstreet.pls"
+			}
+		]
+	},
+	{
+		"group" : "root",
+		"image" : "",
+		"stations" : 
+		[
+			{
+				"name" : "Мегаполис",
+				"url" : "http://fmplay.stream:8010/megapolis-48.aac"
+			},
+			{
+				"image" : "",
+				"name" : "Pilot Radio Tver",
+				"notifications" : true,
+				"url" : "http://online.tv-pilot.ru:1027/pilotradio"
+			},
+			{
+				"image" : "",
+				"name" : "Energy",
+				"notifications" : true,
+				"url" : "http://ic4.101.ru:8000/a99"
+			},
+			{
+				"image" : "",
+				"name" : "Italo Disco",
+				"notifications" : true,
+				"url" : "http://ic4.101.ru:8000/a161"
+			},
+			{
+				"image" : "",
+				"name" : "Chillоut",
+				"notifications" : true,
+				"url" : "http://ic4.101.ru:8000/c15_3"
+			},
+			{
+				"image" : "",
+				"name" : "Чипльдук",
+				"notifications" : true,
+				"url" : "http://radio.4duk.ru/4duk128.mp3"
+			}
+		]
+	},
+	{
+		"group" : "Record",
+		"image" : "",
+		"stations" : 
+		[
+			{
+				"image" : "",
+				"name" : "Radio Record",
+				"notifications" : true,
+				"url" : "http://air.radiorecord.ru:8101/rr_320"
+			},
+			{
+				"image" : "",
+				"name" : "Russian Mix",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/rus_320"
+			},
+			{
+				"image" : "",
+				"name" : "VIP House",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/vip_320"
+			},
+			{
+				"image" : "",
+				"name" : "Супер дискотека 90х",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/sd90_320"
+			},
+			{
+				"image" : "",
+				"name" : "Big Hits",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/bighits_320"
+			},
+			{
+				"image" : "",
+				"name" : "Russian Hits",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/russianhits_320"
+			},
+			{
+				"image" : "",
+				"name" : "Groove/Tribal",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/groovetribal_320"
+			},
+			{
+				"image" : "",
+				"name" : "Chill House",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/chillhouse_320"
+			},
+			{
+				"image" : "",
+				"name" : "Disco/Funk",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/discofunk_320"
+			},
+			{
+				"image" : "",
+				"name" : "Russian Gold",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/russiangold_320"
+			},
+			{
+				"image" : "",
+				"name" : "Tropical",
+				"notifications" : true,
+				"url" : "http://air2.radiorecord.ru:9003/trop_320"
+			},
+			{
+				"image" : "",
+				"name" : "Медляк FM",
+				"notifications" : true,
+				"url" : "http://air.radiorecord.ru:8102/mdl_aac_64"
+			},
+			{
+				"image" : "",
+				"name" : "Pirate Station",
+				"notifications" : true,
+				"url" : "http://air.radiorecord.ru:8102/ps_128"
+			}
+		]
+	}
+]

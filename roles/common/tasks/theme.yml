@@ -1,7 +1,4 @@
 ---
-- name: Add Moka Repo
-  apt_repository: repo="ppa:snwh/ppa" state=present
-
 - name: Install Moka Icons
   apt:
     name:

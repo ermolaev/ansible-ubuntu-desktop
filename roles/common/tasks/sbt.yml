@@ -6,4 +6,4 @@
   apt_repository: repo='deb https://dl.bintray.com/sbt/debian /'
 
 - name: Install sbt
-  apt: name=sbt update_cache=yes state=latest
+  apt: name=sbt update_cache=yes

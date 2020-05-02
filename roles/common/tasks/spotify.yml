@@ -6,4 +6,4 @@
   apt_repository: repo='deb http://repository.spotify.com stable non-free'
 
 - name: Install Spotify
-  apt: name=spotify-client update_cache=yes state=latest
+  apt: name=spotify-client update_cache=yes

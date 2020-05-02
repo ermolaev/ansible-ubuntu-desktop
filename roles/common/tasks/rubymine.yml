@@ -10,22 +10,36 @@
     dest: /home/{{ username }}/setup
     owner: "{{ username }}"
 
-- name: Delete directory
+- name: Delete directory RubyMine
   file: path=/opt/rubymine state=absent
 
-- name: create directory
+- name: Create directory RubyMine
   file:
     path: /opt/rubymine
     state: directory
+
+- name: MOVE TO /opt/rubymine
+  shell: cp -r /home/{{ username }}/setup/RubyMine*/* /opt/rubymine
+  become: yes
+
+- name: RubyMine folder change ownership
+  file:
+    path: /opt/rubymine
+    state: directory
+    recurse: yes
     mode: 0755
     owner: "{{ username }}"
     group: "{{ username }}"
 
-- name: MOVE TO /opt/rubymine
-  shell: mv /home/{{ username }}/setup/{{ rubymine_folder_name }}/* /opt/rubymine
-  become: yes
+- name: RubyMine fix hotkeys in cyrillic keyboard
+  lineinfile:
+   dest: /opt/rubymine/bin/rubymine64.vmoptions
+   line: -javaagent:/home/{{ username }}/soft/LinuxJavaFixes/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
 
-- lineinfile: dest=/opt/rubymine/bin/rubymine64.vmoptions line="-javaagent:/home/{{ username }}/soft/LinuxJavaFixes-1.0.0-SNAPSHOT.jar"
+- name: RubyMine using agent
+  lineinfile:
+   dest: /opt/rubymine/bin/rubymine64.vmoptions
+   line: -javaagent:/home/{{ username }}/soft/jetbrains-agent/jetbrains-agent.jar
 
 - name: Run rubymine
   command: "./rubymine.sh"

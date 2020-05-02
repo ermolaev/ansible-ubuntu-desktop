@@ -1,5 +1,6 @@
 ---
 # Reguirements
+  - include: python.yml
   - include: pre.yml
   - include: git.yml
   - include: gdebi.yml
@@ -12,13 +13,12 @@
   - include: gitkraken.yml
   - include: sublime.yml
   - include: teamviewer.yml
-  - include: rstudio.yml
   - include: tilix.yml
   - include: micro.yml
 
 # Browsers
   - include: chrome.yml
-  - include: opera.yml
+
 
 # System
   - include: numix.yml
@@ -26,11 +26,12 @@
   - include: theme.yml
 
 # Utilities
+  - include: radiotray.yml
   - include: utilities.yml
   - include: redshift.yml
   - include: skype.yml
   - include: telegram.yml
-  - include: keepassx.yml
+  - include: zoom.yml
   # - include: wine.yml
   - include: yandex_disk.yml
   # - include: spotify.yml
@@ -42,17 +43,13 @@
   - include: yarn.yml
   - include: postgresql.yml
   - include: redis.yml
-  - include: r.yml
+
   - include: sbt.yml
   - include: memcached.yml
 
 # DevOps
-  - include: chef.yml
-  - include: virtualbox.yml
-  - include: vagrant.yml
   - include: docker.yml
 
 # Remove unused software
   - include: uninstall.yml
-  - include: unity.yml
   - include: tlp.yml

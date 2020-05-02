@@ -2,12 +2,15 @@
 - name: Disable rdoc
   lineinfile:
     dest: "/home/{{ username }}/.gemrc"
-    line: "gem: --no-rdoc --no-ri"
+    line: "gem: --no-document"
     create: yes
     owner: "{{ username }}"
 
-- name: bundler configurate
-  shell: "bash -lc 'bundle config --global --jobs 3'"
+- name: Bundler install
+  shell: gem install bundler
+
+- name: Bundler configurate
+  shell: bash -lc 'bundle config --global --jobs 3'
   become: yes
   become_user: "{{ username }}"
 
