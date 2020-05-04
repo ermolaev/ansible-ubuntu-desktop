@@ -1,13 +1,18 @@
 ---
-- name: Disable rdoc
-  lineinfile:
-    dest: "/home/{{ username }}/.gemrc"
-    line: "gem: --no-document"
-    create: yes
-    owner: "{{ username }}"
-
-- name: Bundler install
-  shell: gem install bundler
+- name: Install ruby via rbenv
+  include_role:
+    name: zzet.rbenv
+  vars:
+    rbenv:
+      env: user
+      version: v1.1.2
+      default_ruby: "{{ ruby_version }}"
+      rubies:
+      - version: "{{ ruby_version }}"
+        env:
+          RUBY_CONFIGURE_OPTS: "--disable-install-rdoc --disable-install-doc --enable-shared"
+    rbenv_users:
+        - "{{ username }}"
 
 - name: Bundler configurate
   shell: bash -lc 'bundle config --global --jobs 3'
