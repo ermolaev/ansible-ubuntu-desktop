@@ -15,3 +15,4 @@
     group: "{{ username }}"
     remote_src: true
     validate_certs: false
+    extra_opts: [--strip-components=1]
