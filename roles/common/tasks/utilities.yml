@@ -24,6 +24,7 @@
       - pgdbf
       - httpie
       - bat # https://github.com/sharkdp/bat
+      - imagemagick
 
 - name: Set date sormat
   shell: "gsettings set com.canonical.indicator.datetime time-format 'custom' && gsettings set com.canonical.indicator.datetime custom-time-format '%a, %d %b %H:%M'"
