@@ -13,7 +13,6 @@
       - libpq-dev
       - postgresql-server-dev-{{ pg_version }}
       - postgresql-{{ pg_version }}-postgis-{{ postgis_version }}
-  tags: packages
 
 - name: Install pg configuration file
   template:
