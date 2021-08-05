@@ -1,0 +1,42 @@
+---
+- name: download android studio
+  get_url:
+    url: "{{ android_studio_url }}"
+    dest: "/home/{{ username }}/setup/android_studio.tar.gz"
+
+- name: extract android studio
+  unarchive:
+    src: /home/{{ username }}/setup/android_studio.tar.gz
+    dest: /home/{{ username }}/setup
+    owner: "{{ username }}"
+
+- name: Delete directory android studio
+  file:
+    path: /opt/android-studio
+    state: absent
+
+
+- name: MOVE TO /opt/android-studio
+  shell: cp -r /home/{{ username }}/setup/android-studio /opt
+  become: yes
+
+- name: android studio folder change ownership
+  file:
+    path: /opt/android-studio
+    state: directory
+    recurse: yes
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: android_studio fix hotkeys in cyrillic keyboard
+  lineinfile:
+   dest: /opt/android-studio/bin/studio64.vmoptions
+   line: -javaagent:/home/{{ username }}/soft/LinuxJavaFixes/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
+
+- name: Run android_studio
+  command: "./studio.sh"
+  args:
+    chdir: "/opt/android-studio/bin"
+  become: yes
+  become_user: "{{ username }}"

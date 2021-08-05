@@ -36,11 +36,6 @@
    dest: /opt/rubymine/bin/rubymine64.vmoptions
    line: -javaagent:/home/{{ username }}/soft/LinuxJavaFixes/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
 
-- name: RubyMine using agent
-  lineinfile:
-   dest: /opt/rubymine/bin/rubymine64.vmoptions
-   line: -javaagent:/home/{{ username }}/soft/jetbrains-agent/jetbrains-agent.jar
-
 - name: Run rubymine
   command: "./rubymine.sh"
   args:

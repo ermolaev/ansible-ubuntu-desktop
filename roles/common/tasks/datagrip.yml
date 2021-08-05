@@ -36,11 +36,6 @@
    dest: /opt/datagrip/bin/datagrip64.vmoptions
    line: -javaagent:/home/{{ username }}/soft/LinuxJavaFixes/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
 
-- name: RubyMine using agent
-  lineinfile:
-   dest: /opt/datagrip/bin/datagrip64.vmoptions
-   line: -javaagent:/home/{{ username }}/soft/jetbrains-agent/jetbrains-agent.jar
-
 - name: Run datagrip
   command: "./datagrip.sh"
   args:

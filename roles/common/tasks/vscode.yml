@@ -8,8 +8,11 @@
         # code --list-extensions
         visual_studio_code_extensions:
           - EditorConfig.EditorConfig
-          - PKief.material-icon-theme
-          - vscoss.vscode-ansible
+          - pkief.material-icon-theme
+          - zbr.vscode-ansible
+          - gitlab.gitlab-workflow
+          - rebornix.ruby
+          - sianglim.slim
         # cat ~/.config/Code/User/settings.json
         visual_studio_code_settings: {
           "workbench.colorTheme": "Default Light+",
