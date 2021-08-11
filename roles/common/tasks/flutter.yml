@@ -1,0 +1,8 @@
+---
+- name: Install Flutter
+  snap:
+    name: flutter
+    classic: yes
+
+- name: Flutter upgrade
+  shell: /snap/bin/flutter upgrade

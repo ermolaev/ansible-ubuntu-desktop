@@ -2,12 +2,11 @@
 
 
 ```bash
+sudo apt install ansible
 git clone https://github.com/ermolaev/ansible-ubuntu-desktop.git ~/ansible-ubuntu-desktop
 sudo ansible-galaxy install -r requirements.yml
 sudo ansible-playbook setup.yml
-
-# Начать выполнение с определенной задачи - `--start-at-task`
-sudo ansible-playbook setup.yml --start-at-task="Run teamviewer winecfg"
+sudo ansible-playbook setup.yml --start-at-task="Run task name"
 ```
 
 ```bash

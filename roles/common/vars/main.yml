@@ -1,5 +1,5 @@
 ---
-username: andrey90
+username: ermolaev
 
 # Skype URL
 skype_url: https://repo.skype.com/latest/skypeforlinux-64.deb
@@ -21,6 +21,8 @@ virtualbox_url: https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1
 
 # https://www.rstudio.com/products/rstudio/download/
 rstudio_url: https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.1335-amd64.deb
+
+gitkraken_url: https://release.axocdn.com/linux/GitKraken-v7.5.5.deb
 
 pg_user: postgres
 pg_password: postgres

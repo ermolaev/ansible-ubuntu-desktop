@@ -1,10 +1,3 @@
 ---
-- name: install TeamViewer
-  apt: deb=https://download.teamviewer.com/download/teamviewer_i386.deb
-
-# http://askubuntu.com/questions/419605/teamviewer-9-ubuntu-13-10-sound
-- name: Run teamviewer winecfg
-  command: teamviewer --winecfg
-  become: yes
-  become_user: "{{ username }}"
-  become_method: su
+- name: Install TeamViewer
+  apt: deb=https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
