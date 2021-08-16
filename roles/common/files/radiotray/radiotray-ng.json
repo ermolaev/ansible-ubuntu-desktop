@@ -1,5 +1,5 @@
 {
-	"bookmarks" : "/home/ermolaev/.config/radiotray-ng/bookmarks.json",
+	"bookmarks" : "~/.config/radiotray-ng/bookmarks.json",
 	"buffer-duration" : 1,
 	"last-station" : "Pilot Radio Tver",
 	"last-station-group" : "root",
