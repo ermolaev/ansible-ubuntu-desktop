@@ -21,3 +21,36 @@
 - name: Install Docker package
   apt:
     name: docker-ce
+
+- name: Create a group for docker_user
+  group:
+    name: docker
+    state: present
+
+- name: Let a user run docker without sudo
+  become: yes
+  shell: "usermod -aG docker {{ username }}"
+
+- name: Create directory for docker storage
+  file:
+    path: /home/{{ username }}/.docker-data
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: docker
+
+- name: Set docker configuration file
+  template:
+    src: files/docker.json
+    dest: /etc/docker/daemon.json
+
+- name: Set docker configuration file
+  template:
+    src: files/docker.json
+    dest: /etc/docker/daemon.json
+
+- name: Start docker
+  become: yes
+  service:
+    name: docker
+    state: restarted
