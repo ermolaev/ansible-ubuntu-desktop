@@ -1,0 +1,14 @@
+---
+- name: Install Gnome utilities
+  apt:
+    name:
+      - gnome-tweaks
+      - gnome-shell-extensions
+      - gnome-shell-extension-system-monitor
+
+- name: Gnome configurate
+  shell: |
+    gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+    gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windows'
+  become: yes
+  become_user: "{{ username }}"

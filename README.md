@@ -1,4 +1,4 @@
-# Provisioning Ubuntu Desktop 20.04
+# Provisioning Ubuntu Desktop 21.10
 
 
 ```bash
@@ -34,3 +34,12 @@ https://github.com/horst3180/arc-icon-theme
 
 
 https://github.com/winterheart/broadcom-bt-firmware/blob/master/brcm/BCM20703A1-0a5c-6410.hcd `sudo mv ~/Downloads/BCM20703A1-0a5c-6410.hcd /lib/firmware/brcm/BCM-0a5c-6410.hcd`
+
+## Gnome
+https://extensions.gnome.org/extension/570/todotxt/
+https://extensions.gnome.org/extension/750/openweather/
+https://extensions.gnome.org/extension/1732/gtk-title-bar/
+https://extensions.gnome.org/extension/779/clipboard-indicator/
+https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/
+https://extensions.gnome.org/extension/1319/gsconnect/
+https://extensions.gnome.org/extension/120/system-monitor/

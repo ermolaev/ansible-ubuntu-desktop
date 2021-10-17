@@ -56,6 +56,6 @@
 # Remove unused software
   - include: uninstall.yml
 #  - include: tlp.yml
-
+  - include: gnome.yml
   - include: radiotray.yml
   - include: keepassx.yml
