@@ -6,3 +6,5 @@
 
 - name: Flutter upgrade
   shell: /snap/bin/flutter upgrade
+  become: yes
+  become_user: "{{ username }}"
