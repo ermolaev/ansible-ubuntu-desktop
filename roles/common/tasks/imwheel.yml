@@ -1,0 +1,9 @@
+---
+- name: Install IMWheel
+  apt:
+    name: imwheel
+
+- name: Set IMWheel config
+  copy:
+    src: files/imwheelrc.conf
+    dest: /home/{{ username }}/.imwheelrc
