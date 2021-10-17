@@ -17,6 +17,7 @@
   - include: sublime.yml
   - include: teamviewer.yml
   - include: tilix.yml
+  - include: minidlna.yml
 
 # Browsers
   - include: chrome.yml

@@ -1,0 +1,9 @@
+---
+- name: Install minidlna
+  apt:
+    name: minidlna
+
+- name: Install minidlna config
+  copy:
+    src: files/minidlna.conf
+    dest: /etc/minidlna.conf
