@@ -29,7 +29,6 @@
 #  - include: theme.yml
 
 # Utilities
-#  - include: radiotray.yml
   - include: utilities.yml
 #  - include: redshift.yml
   - include: skype.yml
@@ -57,3 +56,6 @@
 # Remove unused software
   - include: uninstall.yml
 #  - include: tlp.yml
+
+  - include: radiotray.yml
+  - include: keepassx.yml

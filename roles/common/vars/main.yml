@@ -35,4 +35,4 @@ ruby_version: 2.7.4
 docker_apt_repository: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"
 
 
-radioray_url: https://github.com/ebruck/radiotray-ng/releases/download/v0.2.7/radiotray-ng_0.2.7_ubuntu_20.04_amd64.deb
+radioray_url: https://github.com/ebruck/radiotray-ng/releases/download/v0.2.8/radiotray-ng_0.2.8_ubuntu_21.04_amd64.deb
